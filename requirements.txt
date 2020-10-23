@@ -1,6 +1,2 @@
-numpy
-notebook
 pynwb
-h5py
 nwbn_conversion_tools
-libtiff
