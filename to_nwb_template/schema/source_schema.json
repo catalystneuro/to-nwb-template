@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "source.schema.json",
+  "title": "Source data and conversion options",
+  "description": "Schema for the source data and conversion options",
+  "version": "0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+
+    "source_data": {
+      "title": "Source Files",
+      "type": "object",
+      "required": [
+        "path_raw",
+        "path_processed"
+      ],
+      "properties": {
+        "path_raw": {
+          "type": "string",
+          "format": "file",
+          "description": "path to raw data file"
+        },
+        "path_processed": {
+          "type": "string",
+          "format": "file",
+          "description": "path to processed data file"
+        }
+      }
+    },
+
+    "conversion_options": {
+      "title": "Conversion Options",
+      "type": "object",
+      "required": [
+        "add_raw",
+        "add_processed"
+      ],
+      "properties": {
+        "add_raw": {
+          "type": "boolean",
+          "default": true,
+          "description": "convert raw data to nwb"
+        },
+        "add_processed": {
+          "type": "boolean",
+          "default": true,
+          "description": "convert processed data to nwb"
+        }
+      }
+    }
+  }
+}
