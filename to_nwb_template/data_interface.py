@@ -30,25 +30,27 @@ class TemplateDataInterface(BaseDataInterface):
 
         return metadata_schema
 
-    def get_metadata(self):
+    def get_metadata(self, metadata):
         """Auto-fill as much of the metadata as possible."""
-        # initiate metadata
-        metadata = dict(
-            NWBFile=dict(
-                session_description='session description',
-                identifier=str(uuid.uuid4()),
-                session_start_time=datetime.strptime('1900-01-01 00:00:00', '%Y-%m-%d %H:%M:%S'),
-            ),
-            Ecephys=dict(
-                Device=dict(name='Device_ecephys'),
-                ElectrodeGroup=dict(
-                    name='ElectrodeGroup',
-                    description='no description',
-                    location='unknown',
-                    device='Device_ecephys'
+
+        if not metadata:
+            # initiate metadata
+            metadata = dict(
+                NWBFile=dict(
+                    session_description='session description',
+                    identifier=str(uuid.uuid4()),
+                    session_start_time=datetime.strptime('1900-01-01 00:00:00', '%Y-%m-%d %H:%M:%S'),
+                ),
+                Ecephys=dict(
+                    Device=dict(name='Device_ecephys'),
+                    ElectrodeGroup=dict(
+                        name='ElectrodeGroup',
+                        description='no description',
+                        location='unknown',
+                        device='Device_ecephys'
+                    )
                 )
             )
-        )
 
         return metadata
 
