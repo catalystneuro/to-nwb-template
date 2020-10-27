@@ -12,19 +12,19 @@
       "title": "Source Files",
       "type": "object",
       "required": [
-        "path_raw",
-        "path_processed"
+        "path_raw_ecephys",
+        "path_processed_ecephys"
       ],
       "properties": {
-        "path_raw": {
+        "path_raw_ecephys": {
           "type": "string",
           "format": "file",
-          "description": "path to raw data file"
+          "description": "path to raw ecephys data file"
         },
-        "path_processed": {
+        "path_processed_ecephys": {
           "type": "string",
           "format": "file",
-          "description": "path to processed data file"
+          "description": "path to processed ecephys data file"
         }
       }
     },
@@ -33,19 +33,19 @@
       "title": "Conversion Options",
       "type": "object",
       "required": [
-        "add_raw",
-        "add_processed"
+        "add_raw_ecephys",
+        "add_processed_ecephys"
       ],
       "properties": {
-        "add_raw": {
+        "add_raw_ecephys": {
           "type": "boolean",
           "default": true,
-          "description": "convert raw data to nwb"
+          "description": "convert raw ecephys data to nwb"
         },
-        "add_processed": {
+        "add_processed_ecephys": {
           "type": "boolean",
           "default": true,
-          "description": "convert processed data to nwb"
+          "description": "convert processed ecephys data to nwb"
         }
       }
     }
