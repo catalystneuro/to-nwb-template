@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "source.schema.json",
+  "title": "Source data and conversion options",
+  "description": "Schema for the source data and conversion options",
+  "version": "0.1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+
+    "source_data": {
+      "title": "Source Files",
+      "type": "object",
+      "required": [
+        "path_raw_ophys",
+        "path_processed_ophys"
+      ],
+      "properties": {
+        "path_raw_ophys": {
+          "type": "string",
+          "format": "file",
+          "description": "path to raw ophys data file"
+        },
+        "path_processed_ophys": {
+          "type": "string",
+          "format": "file",
+          "description": "path to processed ophys data file"
+        }
+      }
+    },
+
+    "conversion_options": {
+      "title": "Conversion Options",
+      "type": "object",
+      "required": [
+        "add_raw_ophys",
+        "add_processed_ophys"
+      ],
+      "properties": {
+        "add_raw_ophys": {
+          "type": "boolean",
+          "default": true,
+          "description": "convert raw ophys data to nwb"
+        },
+        "add_processed_ophys": {
+          "type": "boolean",
+          "default": true,
+          "description": "convert processed ophys data to nwb"
+        }
+      }
+    }
+  }
+}
